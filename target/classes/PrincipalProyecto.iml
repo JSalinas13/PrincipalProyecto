@@ -29,17 +29,8 @@
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:22.0.0" level="project" />
     <orderEntry type="module-library">
       <library>
-        <CLASSES />
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/Downloads/mariadb-java-client-3.0.0-alpha-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/mariadb-java-client-2.7.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/mysql-connector-java-3.1.6-bin.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

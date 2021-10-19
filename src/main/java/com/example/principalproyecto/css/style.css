@@ -1,7 +1,59 @@
+///////////// Loteria /////////////////////////
+//Colores de los botones de las plantillas de la loteria
+#btn_Cartas0,#btn_Cartas3,#btn_Cartas6{
+-fx-background-color: #088A08;
+}
+
+#btn_Cartas1,#btn_Cartas4,#btn_Cartas7{
+-fx-background-color: #FFFFFF;
+}
+
+#btn_Cartas2,#btn_Cartas5,#btn_Cartas8{
+-fx-background-color: #CE0A0A;
+}
+
+#lb_Tiempo,#lb_Contador,#btn_Regresar{
+ -fx-text-fill: #FFFFFF;
+}
+
+
+///////////// Taquimecanografo /////////////////////////
+
 .button{
--fx-background-color: gray;
+-fx-background-color: #000;
+-fx-text-fill: #FFFFFF;
 }
 
 #btn_menu{
 -fx-background-color: gray;
 }
+
+//Tamaños//
+
+#btn_Fun{
+-fx-pref-height: 10px;
+-fx-pref-width: 40px;
+}
+
+#btn_TamNormal{
+-fx-pref-height: 20px;
+-fx-pref-width: 40px;
+}
+
+#btn_Medianos{
+-fx-pref-height: 20px;
+-fx-pref-width: 60px;
+}
+
+#btn_Largos{
+-fx-pref-height: 20px;
+-fx-pref-width: 80px;
+}
+
+#btn_Finalizar{
+-fx-pref-height: 20px;
+-fx-pref-width: 300px;
+-fx-background-color: black;
+-fx-text-fill: #FFFFFF;
+}
+

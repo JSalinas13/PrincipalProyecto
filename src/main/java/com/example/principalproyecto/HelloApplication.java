@@ -2,6 +2,7 @@ package com.example.principalproyecto;
 
 import com.example.principalproyecto.models.Conexion;
 import com.example.principalproyecto.views.Loteria;
+import com.example.principalproyecto.views.Productos;
 import com.example.principalproyecto.views.Taquimecanografo;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -21,8 +22,9 @@ public class HelloApplication extends Application implements EventHandler<Window
     private BorderPane bdPrincipal;
     private MenuBar mbOpciones;
     private Menu mOpcion1, mOpcion2, mSalir;
-    private MenuItem mtLoteria, mtSalir, mTaqui;
+    private MenuItem mtLoteria, mtSalir, mTaqui, mtTienda;
     private Scene scene;
+    private Conexion conexion;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -37,6 +39,7 @@ public class HelloApplication extends Application implements EventHandler<Window
     }
 
     private void CrearUI() {
+        conexion = new Conexion();
         bdPrincipal = new BorderPane();
         mbOpciones = new MenuBar();
         mOpcion1 = new Menu("Competencia 1");
@@ -51,12 +54,14 @@ public class HelloApplication extends Application implements EventHandler<Window
         //Instanciamos los MenuItems
         mtLoteria = new MenuItem("Loteria");
         mTaqui = new MenuItem("Taquimecanografo");
+        mtTienda = new MenuItem("Tienda");
         mtLoteria.setOnAction(actionEvent -> MenuOpciones(1));
         mTaqui.setOnAction(actionEvent -> MenuOpciones(2));
+        mtTienda.setOnAction(actionEvent -> MenuOpciones(3));
 //        mtLoteria.setOnAction(actionEvent -> {
 //            new Loteria();
 //        });
-        mOpcion1.getItems().addAll(mtLoteria, mTaqui);
+        mOpcion1.getItems().addAll(mtLoteria, mTaqui, mtTienda);
 
 
         mtSalir = new MenuItem("Hasta luego...");
@@ -71,6 +76,9 @@ public class HelloApplication extends Application implements EventHandler<Window
                 break;
             case 2:
                 new Taquimecanografo();
+                break;
+            case 3:
+                new Productos();
                 break;
             case 20:
                 System.exit(0);
@@ -92,8 +100,9 @@ public class HelloApplication extends Application implements EventHandler<Window
 
         try {
             Conexion.getConexion();
+            System.out.println("Conexion Exitosa");
         } catch (Exception e) {
-            Alert alertErrorBD = new Alert(Alert.AlertType.INFORMATION);
+            Alert alertErrorBD = new Alert(Alert.AlertType.ERROR);
             alertErrorBD.setTitle("Informacion del sistema");
             alertErrorBD.setHeaderText("Informacion sobre la conexion de la Base de Datos");
             alertErrorBD.setContentText(e.getMessage());
